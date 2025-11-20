@@ -59,7 +59,7 @@ void drawBeveledBar(int x, int y, int length, int thickness, int type, uint16_t 
 void drawRealDigit(int num, int x, int y, uint16_t color) {
   // Ukuran Segmen
   int h_len = 9; // Panjang segmen horizontal
-  int v_len = 11; // Panjang segmen vertikal
+  int v_len = 13; // Panjang segmen vertikal
   int thick = 3;  // Ketebalan (Fixed di fungsi drawBeveledBar)
 
   // Posisi Koordinat Segmen (Ada Gap antar segmen)
@@ -69,39 +69,39 @@ void drawRealDigit(int num, int x, int y, uint16_t color) {
   
   // B (Kanan Atas)
   if (num!=5 && num!=6) 
-    drawBeveledBar(x + h_len + 1, y + 2, v_len, thick, 1, color);
+    drawBeveledBar(x + h_len + 1, y + 1, v_len, thick, 1, color);
 
   // C (Kanan Bawah)
   if (num!=2) 
-    drawBeveledBar(x + h_len + 1, y + v_len + 5, v_len, thick, 1, color);
+    drawBeveledBar(x + h_len + 1, y + v_len + 2, v_len, thick, 1, color);
 
   // D (Bawah)
   if (num!=1 && num!=4 && num!=7) 
-    drawBeveledBar(x + 2, y + (v_len * 2) + 5, h_len, thick, 0, color);
+    drawBeveledBar(x + 2, y + (v_len * 2) + 1, h_len, thick, 0, color);
 
   // E (Kiri Bawah)
   if (num==0 || num==2 || num==6 || num==8) 
-    drawBeveledBar(x, y + v_len + 5, v_len, thick, 1, color);
+    drawBeveledBar(x, y + v_len + 2, v_len, thick, 1, color);
 
   // F (Kiri Atas)
   if (num!=1 && num!=2 && num!=3 && num!=7) 
-    drawBeveledBar(x, y + 2, v_len, thick, 1, color);
+    drawBeveledBar(x, y + 1, v_len, thick, 1, color);
 
   // G (Tengah)
   if (num!=0 && num!=1 && num!=7) 
-    drawBeveledBar(x + 2, y + v_len + 2, h_len, thick, 0, color);
+    drawBeveledBar(x + 2, y + v_len, h_len, thick, 0, color);
 }
 void drawDigitSeratusan(int x, int y, uint16_t color) {
   // Ukuran Segmen
-  int h_len = 10; // Panjang segmen horizontal
-  int v_len = 11; // Panjang segmen vertikal
+  int h_len = 9; // Panjang segmen horizontal
+  int v_len = 13; // Panjang segmen vertikal
   int thick = 3;  // Ketebalan (Fixed di fungsi drawBeveledBar)
 
   // E (Kiri Bawah)
-  drawBeveledBar(x, y + v_len + 5, v_len, thick, 1, color);
+  drawBeveledBar(x, y + v_len + 2, v_len, thick, 1, color);
 
   // F (Kiri Atas)
-  drawBeveledBar(x, y + 2, v_len, thick, 1, color);
+  drawBeveledBar(x, y + 1, v_len, thick, 1, color);
 
 }
 
